@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <title>awesome solution b</title>
+          <script src='lodash.js'> </script>
+          <script src='jquery.js'> </script>
+    </head>
+    <body>
+        <p id='awesome-index'> replace me </p>
+    </body>
+    <script>
+       var programmers = [
+        {
+            name: 'Bob',
+            occupation: 'programmer',
+            awesomeIndex: 7,
+        },
+        {
+            name: 'Alice',
+            occupation: 'programmer',
+            awesomeIndex: 9,
+        },
+        {
+            name: 'Zaphod',
+            occupation: 'President of the Galaxy'
+        }
+        ];
+
+        var totalAwesome = 0;
+        _.forEach(programmers, function(n,key){
+        if (n.awesomeIndex) totalAwesome += n.awesomeIndex});
+        var averageAwesome = totalAwesome / programmers.length;
+        $('#awesome-index').replaceWith('<p id="awesome-index">' + averageAwesome + '</p>');
+    </script>
+
+</html>
