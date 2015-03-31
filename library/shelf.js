@@ -17,6 +17,7 @@ Shelf.prototype.addBook = function addBook(){
     var question2str = 'who was the author of ' + booktitle + '? ';
     var bookauthor = rl.question(question2str);
     var newBook = new Book(booktitle, bookauthor);
+    console.log('the new book is ' + newBook);
     this.books[booktitle] = newBook;
     console.log(booktitle + ' was written by ' + bookauthor + '\n');
 }
@@ -28,6 +29,17 @@ Shelf.prototype.removeBook = function removeBook(){
     } else {
         console.log('could not find book to delete');
     }
+}
+
+Shelf.prototype.toString = function toString(){
+    var str = '';
+    var str = str + '{ name: ' + this.name;
+    var str = str +  ', books: ';
+    for (var property in this.books){
+        str = str + property + ': ' + this.books[property] + '; ';
+    }
+    str = str +  ' }';
+    return str;
 }
 
 module.exports = Shelf;

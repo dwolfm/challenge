@@ -1,0 +1,8 @@
+OPTIONS:
+h = show this menu
+p = print the library object
+as = add shelf
+rs = delete shelf
+ab = add book
+rb = delete book
+q = quit
